@@ -58,13 +58,6 @@ const EditPrompt = () => {
     }
 
   return (
-    <Suspense
-      fallback={
-        <div className="w-full h-full flex-center">
-          <p className="text-gray-500">Loading...</p>
-        </div>
-      }
-    >
       <Form
         type="Edit"
         post={post}
@@ -72,7 +65,6 @@ const EditPrompt = () => {
         submitting={submitting}
         handleSubmit={updatePrompt}
       />
-    </Suspense>
   );
 };
 
