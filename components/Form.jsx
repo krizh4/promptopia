@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react';
 
 const Form = ({ type, setPost, submitting, handleSubmit, post }) => {
   return (
