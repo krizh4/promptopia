@@ -57,7 +57,7 @@ const EditPrompt = () => {
         }
     }
 
-  return <>
+  return (
     <Suspense
       fallback={
         <div className="w-full h-full flex-center">
@@ -73,7 +73,7 @@ const EditPrompt = () => {
         handleSubmit={updatePrompt}
       />
     </Suspense>
-  </>;
+  );
 };
 
 export default EditPrompt
