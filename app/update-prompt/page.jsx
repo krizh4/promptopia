@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 import Form from "@components/Form";
 
@@ -56,13 +57,23 @@ const EditPrompt = () => {
         }
     }
 
-  return <Form 
-    type="Edit"
-    post={post}
-    setPost={setPost}
-    submitting={submitting}
-    handleSubmit={updatePrompt}
-  />;
+  return <>
+    <Suspense
+      fallback={
+        <div className="w-full h-full flex-center">
+          <p className="text-gray-500">Loading...</p>
+        </div>
+      }
+    >
+      <Form
+        type="Edit"
+        post={post}
+        setPost={setPost}
+        submitting={submitting}
+        handleSubmit={updatePrompt}
+      />
+    </Suspense>
+  </>;
 };
 
 export default EditPrompt

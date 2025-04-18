@@ -12,14 +12,12 @@ const Profile = ({ name, desc, data, handleEdit, handdleDelete }) => {
       </p>
       <div className='mt-10 prompt_layout'>
       {data.map((post) => (
-        <Suspense fallback={<div>Loading...</div>}>
-          <PromptCard 
-            key={post._id}
-            post={post}
-            handleEdit={() => handleEdit && handleEdit(post)}
-            handleDelete={() => handdleDelete && handdleDelete(post)}
-          />
-        </Suspense>
+        <PromptCard 
+          key={post._id}
+          post={post}
+          handleEdit={() => handleEdit && handleEdit(post)}
+          handleDelete={() => handdleDelete && handdleDelete(post)}
+        />
       ))}
     </div>
     </section>
